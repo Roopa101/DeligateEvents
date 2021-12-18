@@ -6,21 +6,34 @@ using System.Threading.Tasks;
 
 namespace DeligateEvents
 {
+    public delegate void DelEventHandler();
     class Program
     {
-
-        public delegate int operation(int x, int y);
-        static int Addition(int a, int b)
-        {
-            return a + b;
-        }
+        public static event DelEventHandler add;
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To Delegate Demo");
-            operation obj = new operation(Addition);
-            //Console.WriteLine("Addition is = {0}",obj(23,27));
-            MulticastDelegate.ImplementDelegate();
+            //Console.WriteLine("Hello World!");
+            //add += new DelEventHandler(India);
+            //add += new DelEventHandler(USA);
+            //add += new DelEventHandler(England);
+            //add.Invoke();
+            Console.WriteLine("************Event Handling****************");
+            EventHandling.ImplementEvent();
             Console.ReadKey();
         }
+        private static void India()
+        {
+            Console.WriteLine("India");
+        }
+        private static void USA()
+        {
+            Console.WriteLine("USA");
+        }
+        private static void England()
+        {
+            Console.WriteLine("England");
+        }
     }
+
+
 }
