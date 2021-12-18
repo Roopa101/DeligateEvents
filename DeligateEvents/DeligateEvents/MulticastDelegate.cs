@@ -14,6 +14,8 @@ namespace DeligateEvents
 
             Delop obj = Operation.Add;
             obj += Operation.Square;   //  int x=5;   x=x+10;  x/=10;
+            obj += Operation.Sub;
+            obj += Operation.Div;
             obj(5, 5);
             obj(8, 3);
         }
@@ -31,6 +33,14 @@ namespace DeligateEvents
         public static void Square(int a, int b)
         {
             Console.WriteLine("Multiple = {0}", a * b);
+        }
+        public static void Sub(int a, int b)
+        {
+            Console.WriteLine("Substraction = {0}", a - b);
+        }
+        public static void Div(int a, int b)
+        {
+            Console.WriteLine("Division = {0}", a / b);
         }
     }
 
